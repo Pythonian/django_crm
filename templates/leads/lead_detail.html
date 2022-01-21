@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}{{ lead }}{% endblock %}
+
+{% block content %}
+
+<section class="text-gray-600 body-font overflow-hidden">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+                src="https://dummyimage.com/400x400">
+            <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                <h2 class="text-sm title-font text-gray-500 tracking-widest">LEAD</h2>
+                <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">
+                    {{ lead }}
+                </h1>
+                <p class="leading-relaxed mb-4">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha
+                    taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage brooklyn.
+                    Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra
+                    jean shorts keytar banjo tattooed umami cardigan.
+                </p>
+                <div class="flex border-t border-gray-200 py-2">
+                    <span class="text-gray-500">Age</span>
+                    <span class="ml-auto text-gray-900">{{ lead.age }}</span>
+                </div>
+                <div class="flex border-t border-gray-200 py-2">
+                    <span class="text-gray-500">Location</span>
+                    <span class="ml-auto text-gray-900">Dummy location</span>
+                </div>
+                <div class="flex border-t border-gray-200 py-2">
+                    <span class="text-gray-500">Phone number</span>
+                    <span class="ml-auto text-gray-900">+23489201820</span>
+                </div>
+                <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                    <span class="text-gray-500">Agent</span>
+                    <span class="ml-auto text-gray-900">{{ lead.agent }}</span>
+                </div>
+                <div class="flex">
+                    <a href="{% url 'leads:update' lead.pk %}"
+                        class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Update</a>
+                    <a href="{% url 'leads:delete' lead.pk %}"
+                        class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" style=" fill:#f31313;" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 48 48"><path d="M 20.5 4 A 1.50015 1.50015 0 0 0 19.066406 6 L 14.640625 6 C 12.803372 6 11.082924 6.9194511 10.064453 8.4492188 L 7.6972656 12 L 7.5 12 A 1.50015 1.50015 0 1 0 7.5 15 L 8.2636719 15 A 1.50015 1.50015 0 0 0 8.6523438 15.007812 L 11.125 38.085938 C 11.423352 40.868277 13.795836 43 16.59375 43 L 31.404297 43 C 34.202211 43 36.574695 40.868277 36.873047 38.085938 L 39.347656 15.007812 A 1.50015 1.50015 0 0 0 39.728516 15 L 40.5 15 A 1.50015 1.50015 0 1 0 40.5 12 L 40.302734 12 L 37.935547 8.4492188 C 36.916254 6.9202798 35.196001 6 33.359375 6 L 28.933594 6 A 1.50015 1.50015 0 0 0 27.5 4 L 20.5 4 z M 14.640625 9 L 33.359375 9 C 34.196749 9 34.974746 9.4162203 35.439453 10.113281 L 36.697266 12 L 11.302734 12 L 12.560547 10.113281 A 1.50015 1.50015 0 0 0 12.5625 10.111328 C 13.025982 9.4151428 13.801878 9 14.640625 9 z M 11.669922 15 L 36.330078 15 L 33.890625 37.765625 C 33.752977 39.049286 32.694383 40 31.404297 40 L 16.59375 40 C 15.303664 40 14.247023 39.049286 14.109375 37.765625 L 11.669922 15 z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a href="{% url 'leads:home' %}">Back to leads</a>
+<a href="{% url 'leads:delete' lead.pk %}">Delete</a>
+{% endblock content %}

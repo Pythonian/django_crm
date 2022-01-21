@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Create new Lead{% endblock %}
+
+{% block content %}
+<a href="/">Back to leads</a>
+<hr>
+<h3>Create a new Lead</h3>
+<form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock content %}

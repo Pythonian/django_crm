@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Lead delete confirmation{% endblock title %}
+
+{% block content %}
+<h2>Lead delete confirmation</h2>
+<form action="." method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete the lead "{{ lead }}?"</p>
+    <button type="submit">Indeed</button>
+</form>
+{% endblock content %}
